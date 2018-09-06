@@ -1,0 +1,14 @@
+server:
+   port: 8888
+
+management:
+    security:
+        enabled: false
+
+spring:
+  cloud:
+    config:
+      server:
+        git:
+          uri: https://github.com/jdoubleu72/spring-cloud-gateway-properties-issue.git
+          searchPaths: '{application}'

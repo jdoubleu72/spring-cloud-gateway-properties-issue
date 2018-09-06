@@ -1,0 +1,31 @@
+spring:
+    cloud:
+        gateway:
+            routes:
+            -   id: api-aow
+                uri: https://localhost:8080/api/aow
+                predicates:
+                  - Path=/api/aow/**
+            -   id: frontend
+                uri: https://localhost:9000
+                predicates:
+                  - Path=/**
+    main:
+        banner-mode: "off"
+    mvc:
+        favicon:
+            enabled: false
+
+security.basic.enabled: false
+security.ignored: /**
+
+management:
+    endpoints:
+        web:
+            exposure:
+                include: "*"
+        jmx:
+            exposure:
+                include: "*"
+
+server.port: 8000
